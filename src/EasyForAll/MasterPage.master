@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>Easy fo All - WEC  </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <link rel="stylesheet" href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
+        media="screen" />
+    <script type="text/javascript" src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+  
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+
+
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/script.js"></script>
+
+
+
+
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <!-- Main styles for this application -->
+        <% if (Session["dir"].ToString() == "rtl")
+            { %>
+        <link href="dest/style.css" rel="stylesheet" />
+        <%}
+            else
+            { %>
+
+        <link href="css/style.css" rel="stylesheet" />
+        <%} %>
+
+
+       
+    </asp:PlaceHolder>
+    <script type="text/javascript">
+        //Disable the default MouseOver functionality of ASP.Net Menu control.
+        Sys.WebForms.Menu._elementObjectMapper.getMappedObject = function () {
+            return false;
+        };
+        $(function () {
+            //Remove the style attributes.
+            $(".navbar-nav li, .navbar-nav a, .navbar-nav ul").removeAttr('style');
+
+            //Apply the Bootstrap class to the Submenu.
+            $(".dropdown-menu").closest("li").removeClass().addClass("dropdown-toggle");
+
+            //Apply the Bootstrap properties to the Submenu.
+            $(".dropdown-toggle").find("a").eq(0).attr("data-toggle", "dropdown").attr("aria-haspopup", "true").attr("aria-expanded", "false").append("<span class='caret'></span>");
+
+            //Apply the Bootstrap "active" class to the selected Menu item.
+            $("a.selected").closest("li").addClass("active");
+            $("a.selected").closest(".dropdown-toggle").addClass("active");
+        });
+    </script>
+</head>
+
+<body runat="server" style="font-family: Noor, Tahoma, Geneva, Verdana, sans-serif">
+    <form id="form1" runat="server">
+
+        <div class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-9">
+
+                        <div class="navbar-wrapper">
+
+                            <div class="navbar-inverse" role="navigation">
+
+
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                        aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                            class="icon-bar"></span><span class="icon-bar"></span>
+                                    </button>
+
+                                </div>
+
+
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                    <asp:Label ID="LblMessage" Text="" runat="server" CssClass="LblMessage"></asp:Label>
+                                    <%  if (Session["UserCode"] == null)
+                                        { %>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <%-- <li><a data-toggle="modal" data-target="#loginpop"><span class="glyphicon glyphicon-log-in"></span>login</a></li>--%>
+                                        <li><a href="Signin.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                                        <li><a href="Customers.aspx"><span class="glyphicon glyphicon-log-in"></span>Register</a></li>
+                                    </ul>
+                                    <%} %>
+                                    <%  if (Session["UserCode"] != null)
+                                        { %>
+                                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" RenderingMode="List" Font-Size="XX-Large"
+                                        IncludeStyleBlock="false" StaticMenuStyle-CssClass="nav navbar-nav" DynamicMenuStyle-CssClass="dropdown-menu" CssClass="MenuBar">
+                                        <DynamicMenuStyle CssClass="dropdown-menu"></DynamicMenuStyle>
+                                        <StaticMenuStyle CssClass="nav navbar-nav"></StaticMenuStyle>
+                                    </asp:Menu>0
+
+
+                                    <asp:Label ID="Label1" ForeColor="White" Font-Names="noor" runat="server" Text=""></asp:Label>
+
+
+                                    <%} %>
+                                </div>
+
+
+
+
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                </asp:ScriptManager>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-2">
+                        <a href="Default.aspx">
+                            <img src="Images/WEC-Logo1.png" alt="Easy for all" style="width: 100%; height: 40px"></a>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="pull-right">
+                            <% if (Session["dir"].ToString() == "rtl")
+                                { %>
+                            <asp:ImageButton ID="ImageButton1" CausesValidation="false" ImageUrl="~/Images/usflag.png" runat="server" OnClick="ImageButton1_Click" />
+
+                            <%}
+                                else
+                                { %>
+                            <asp:ImageButton ID="ImageButton2" CausesValidation="false" ImageUrl="~/Images/arflag.png" runat="server" OnClick="ImageButton2_Click" />
+
+                            <%} %>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer">
+
+            <div class="container">
+                <p class="copyright">Copyright 2018. All rights reserved.	</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="loginpop" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col-sm-6 login">
+                            <h4>Login</h4>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">الايميل</label>
+
+                                <asp:TextBox ID="_EmailText" runat="server" CssClass="form-control" placeholder="ادخل الايميل ..."></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword2">كلمة المرور</label>
+
+                                <asp:TextBox ID="_PasswordText" TextMode="Password" runat="server" placeholder="ادخل كلمة المرور" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    Remember me
+                                </label>
+                            </div>
+
+                            <asp:LinkButton ID="BtnSave" CssClass="btn btn-primary" runat="server" OnClick="BtnSave_Click"><i class="glyphicon glyphicon-floppy-save"></i> Login</asp:LinkButton>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <h4>مستخدم جديد</h4>
+
+                            <h4 dir="rtl">حتى تتم عملية الشراء او البيع او الاستئجار لا بد من تسجيل الدخول  اذا كان لديك حساب والا ارجو التسجيل بالضغط على زر تسجيل  جديد</h4>
+
+                            <asp:HyperLink ID="HyperLink5" CssClass="btn-lg" NavigateUrl="~/Customers.aspx" runat="server"> تسجيل جديد</asp:HyperLink>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+  <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/tether.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+</body>
+
+</html>

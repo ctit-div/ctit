@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountingMonth" xml:space="preserve">
+    <value>المحاسبة شهر</value>
+  </data>
+  <data name="AccumulatedDepreciation" xml:space="preserve">
+    <value>مجمع الاهلاك</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>كمية</value>
+  </data>
+  <data name="AnualPercent" xml:space="preserve">
+    <value>Anual Percent</value>
+  </data>
+  <data name="Applications" xml:space="preserve">
+    <value>التطبيقات</value>
+  </data>
+  <data name="AssetAmount" xml:space="preserve">
+    <value>Asset Amount</value>
+  </data>
+  <data name="AssetLedgerId" xml:space="preserve">
+    <value>Asset Account</value>
+  </data>
+  <data name="AssetNo" xml:space="preserve">
+    <value>Asset No.</value>
+  </data>
+  <data name="BankGroup" xml:space="preserve">
+    <value>مجموعة البنك</value>
+  </data>
+  <data name="Banks" xml:space="preserve">
+    <value>البنوك</value>
+  </data>
+  <data name="BankTransferDate" xml:space="preserve">
+    <value>تاريخ التحويل</value>
+  </data>
+  <data name="BankType" xml:space="preserve">
+    <value>البنك نوع</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="BranchAlreadyExists" xml:space="preserve">
+    <value>اسم فرع موجود بالفعل.</value>
+  </data>
+  <data name="BranchHasData" xml:space="preserve">
+    <value>فرع يحتوي على بيانات، لا يمكن حذفها.</value>
+  </data>
+  <data name="BranchName" xml:space="preserve">
+    <value>اسم الفرع</value>
+  </data>
+  <data name="BusinessType" xml:space="preserve">
+    <value>Business Type</value>
+  </data>
+  <data name="CanDrive" xml:space="preserve">
+    <value>يمكن أن تدفع</value>
+  </data>
+  <data name="CashGroup" xml:space="preserve">
+    <value>المجموعة النقدية</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>تغيير كلمة السر</value>
+  </data>
+  <data name="ChartAlreadyExists" xml:space="preserve">
+    <value>اسم المخطط موجود بالفعل.</value>
+  </data>
+  <data name="ChartHasData" xml:space="preserve">
+    <value>الرسم البياني يحتوي على بيانات، لا يمكن حذفها.</value>
+  </data>
+  <data name="ChequeDate" xml:space="preserve">
+    <value>تاريخ شيكات</value>
+  </data>
+  <data name="ChequeGroup" xml:space="preserve">
+    <value>مجموعة شيك</value>
+  </data>
+  <data name="ChequeNo" xml:space="preserve">
+    <value>شيكات لا</value>
+  </data>
+  <data name="ChequePayeeName" xml:space="preserve">
+    <value>شيكات اسم المدفوع لأمره</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="COAChartName" xml:space="preserve">
+    <value>اسم المجموعة</value>
+  </data>
+  <data name="CompanyAlreadyExists" xml:space="preserve">
+    <value>اسم الشركة موجود بالفعل.</value>
+  </data>
+  <data name="CompanyHasData" xml:space="preserve">
+    <value>الشركة لديها البيانات، لا يمكن حذفها.</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>اسم الشركة</value>
+  </data>
+  <data name="CompanyShortName" xml:space="preserve">
+    <value>اسم مختصر</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="ContactNumber" xml:space="preserve">
+    <value>رقم الاتصال.</value>
+  </data>
+  <data name="CustomerGroup" xml:space="preserve">
+    <value>مجموعة العملاء</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="DepreciationExpense" xml:space="preserve">
+    <value>Depreciation Expense</value>
+  </data>
+  <data name="DepreciationMethod" xml:space="preserve">
+    <value>Depreciation Method</value>
+  </data>
+  <data name="DepreciationType" xml:space="preserve">
+    <value>Depreciation Type</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>وصف</value>
+  </data>
+  <data name="DivisionAlreadyExists" xml:space="preserve">
+    <value>اسم الفرقة موجود بالفعل.</value>
+  </data>
+  <data name="DivisionHasData" xml:space="preserve">
+    <value>قسم يحتوي على بيانات، لا يمكن حذفها.</value>
+  </data>
+  <data name="DivisionName" xml:space="preserve">
+    <value>اسم القسم</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="EmployeeAlreadyExists" xml:space="preserve">
+    <value>Employee Name Already Exists.</value>
+  </data>
+  <data name="EmployeeGroup" xml:space="preserve">
+    <value>المجموعة موظف</value>
+  </data>
+  <data name="EmployeeHasData" xml:space="preserve">
+    <value>Employee has data, cannot be deleted.</value>
+  </data>
+  <data name="EmployeeType" xml:space="preserve">
+    <value>فئة الموظف</value>
+  </data>
+  <data name="EmpNumber" xml:space="preserve">
+    <value>رقم الموظف</value>
+  </data>
+  <data name="EndOfLevel" xml:space="preserve">
+    <value>نهاية المستوى.</value>
+  </data>
+  <data name="ErrorDebitCredit" xml:space="preserve">
+    <value>وينبغي أن يكون مبلغ الخصم يساوي مجموع الائتمان.</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>فاكس</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>أنثى</value>
+  </data>
+  <data name="Finance" xml:space="preserve">
+    <value>تمويل</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>الاسم الاول</value>
+  </data>
+  <data name="FixedAssetAlreadyExists" xml:space="preserve">
+    <value>Asset Account Already Exists</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>جنس</value>
+  </data>
+  <data name="IDNumber" xml:space="preserve">
+    <value>رقم الهوية</value>
+  </data>
+  <data name="IDType" xml:space="preserve">
+    <value>نوع معرف</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>صالح كلمة السر القديمة</value>
+  </data>
+  <data name="IsSystemUser" xml:space="preserve">
+    <value>هو نظام العضو</value>
+  </data>
+  <data name="IsVoucherNoMandatory" xml:space="preserve">
+    <value>غير قسيمة رقم إلزامية</value>
+  </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>المسمى الوظيفي</value>
+  </data>
+  <data name="JoiningDate" xml:space="preserve">
+    <value>تاريخ الانضمام</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>الكنية</value>
+  </data>
+  <data name="LedgerHasData" xml:space="preserve">
+    <value>دفتر الأستاذ ديه البيانات، لا يمكن حذفها.</value>
+  </data>
+  <data name="LedgerName" xml:space="preserve">
+    <value>Ledger Name</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>ذكر</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>كلمة السر الجديدة</value>
+  </data>
+  <data name="NoOfLevels" xml:space="preserve">
+    <value>عدد من المستويات</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>كلمة المرور القديمة</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>عمليات</value>
+  </data>
+  <data name="PasswordMessage" xml:space="preserve">
+    <value>تأكيد كلمة المرور لا تتطابق.</value>
+  </data>
+  <data name="PayedBy" xml:space="preserve">
+    <value>دفعت من قبل</value>
+  </data>
+  <data name="PayerName" xml:space="preserve">
+    <value>اسم دافع</value>
+  </data>
+  <data name="PayFrom" xml:space="preserve">
+    <value>دفع من</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>نوع الدفع</value>
+  </data>
+  <data name="PayTo" xml:space="preserve">
+    <value>دفع إلى</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>هاتف</value>
+  </data>
+  <data name="PlaceOfIssue" xml:space="preserve">
+    <value>مكان صدوره</value>
+  </data>
+  <data name="PleaseEnterValue" xml:space="preserve">
+    <value>الرجاء إدخال قيمة.</value>
+  </data>
+  <data name="PleaseSelectDate" xml:space="preserve">
+    <value>Please select date.</value>
+  </data>
+  <data name="PleaseSelectOption" xml:space="preserve">
+    <value>رجاءا اختر أحد الخيارات.</value>
+  </data>
+  <data name="PostingType" xml:space="preserve">
+    <value>Voucher Posting Type</value>
+  </data>
+  <data name="ProfitLossLedger" xml:space="preserve">
+    <value>الربح / الخسارة ليدجر</value>
+  </data>
+  <data name="PurchaseDate" xml:space="preserve">
+    <value>Purchase Date</value>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>نوع استلام</value>
+  </data>
+  <data name="ReceivedBy" xml:space="preserve">
+    <value>استلمت من قبل</value>
+  </data>
+  <data name="ReceivedFrom" xml:space="preserve">
+    <value>مستلم من</value>
+  </data>
+  <data name="ReceiverName" xml:space="preserve">
+    <value>اسم المستلم</value>
+  </data>
+  <data name="RoleType" xml:space="preserve">
+    <value>نوع دور</value>
+  </data>
+  <data name="StartUseDate" xml:space="preserve">
+    <value>Start Use Date</value>
+  </data>
+  <data name="SupplierAlreadyExists" xml:space="preserve">
+    <value>Supplier Already Exists</value>
+  </data>
+  <data name="SupplierHasData" xml:space="preserve">
+    <value>Supplier has data, cannot be deleted.</value>
+  </data>
+  <data name="SupplierName" xml:space="preserve">
+    <value>Supplier Name</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>مجموع</value>
+  </data>
+  <data name="UsedBy" xml:space="preserve">
+    <value>Used By</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>موجود المستخدم إذا</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="UserRoleName" xml:space="preserve">
+    <value>اسم العضو دور</value>
+  </data>
+  <data name="VehicleGroup" xml:space="preserve">
+    <value>مجموعة مركبة</value>
+  </data>
+  <data name="VoucherDate" xml:space="preserve">
+    <value>تاريخ السند</value>
+  </data>
+  <data name="VoucherFromDate" xml:space="preserve">
+    <value>تاريخ السند من</value>
+  </data>
+  <data name="VoucherNo" xml:space="preserve">
+    <value>رقم السند</value>
+  </data>
+  <data name="VoucherToDate" xml:space="preserve">
+    <value>تاريخ السند</value>
+  </data>
+  <data name="VoucherType" xml:space="preserve">
+    <value>نوع السند</value>
+  </data>
+  <data name="BtnSearch" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="CategoryItem" xml:space="preserve">
+    <value>التصنيف</value>
+  </data>
+  <data name="CategoryTitle" xml:space="preserve">
+    <value>التصنيف</value>
+  </data>
+  <data name="CompanyId" xml:space="preserve">
+    <value>كود الشركة</value>
+  </data>
+  <data name="LabelUpload" xml:space="preserve">
+    <value>تحميل  الصورة</value>
+  </data>
+  <data name="LblAlias" xml:space="preserve">
+    <value>كود التصنيف</value>
+  </data>
+  <data name="LblGroup" xml:space="preserve">
+    <value>اسم التصنيف</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="AmountinLocalCurrency" xml:space="preserve">
+    <value>المبلغ بالعملة المحلية</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>العملة</value>
+  </data>
+  <data name="DepartmentName" xml:space="preserve">
+    <value>اسم الادارة</value>
+  </data>
+  <data name="DevisionName" xml:space="preserve">
+    <value>اسم القسم</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>ادخل المبلغ</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>سعر الصرف</value>
+  </data>
+  <data name="ForiegnCurrencyAmount" xml:space="preserve">
+    <value>المبلغ بالعملة الاجنبية</value>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>تاريخ الفاتورة</value>
+  </data>
+  <data name="InvoiceNo" xml:space="preserve">
+    <value>رقم الفاتورة</value>
+  </data>
+  <data name="InvoiceTotal" xml:space="preserve">
+    <value>مبلغ الفاتورة</value>
+  </data>
+  <data name="ManualVoucherNo" xml:space="preserve">
+    <value>رقم السند</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>ملاحظة</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="TransactionNo" xml:space="preserve">
+    <value>رقم العملية</value>
+  </data>
+  <data name="VoucherID" xml:space="preserve">
+    <value>كود السند</value>
+  </data>
+  <data name="BtnNext" xml:space="preserve">
+    <value>  &lt;&lt;  التالي </value>
+  </data>
+  <data name="BtnSearchItem" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="ButtonPrevious" xml:space="preserve">
+    <value>السابق  &gt;&gt;</value>
+  </data>
+  <data name="LabelActive" xml:space="preserve">
+    <value>نشط</value>
+  </data>
+  <data name="LabelAgentName" xml:space="preserve">
+    <value>اسم الوكيل</value>
+  </data>
+  <data name="LabelAvaiableQuantity" xml:space="preserve">
+    <value>الكمية المتوفرة</value>
+  </data>
+  <data name="LabelAveragePrice" xml:space="preserve">
+    <value>معدل السعر</value>
+  </data>
+  <data name="LabelCompanBarcode" xml:space="preserve">
+    <value>باركود الشركة المصنعة</value>
+  </data>
+  <data name="LabelCostPrice" xml:space="preserve">
+    <value>سعر التكلفة</value>
+  </data>
+  <data name="LabelDescription" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="LabelDisplayforCustomers" xml:space="preserve">
+    <value>يعرض على الويب</value>
+  </data>
+  <data name="LabelItemsInfo" xml:space="preserve">
+    <value>بيانات الصنف</value>
+  </data>
+  <data name="LabelItemType" xml:space="preserve">
+    <value>نوع الصنف</value>
+  </data>
+  <data name="LabelLeastQuantity" xml:space="preserve">
+    <value>كمية الحد الادنى</value>
+  </data>
+  <data name="LabelLocation" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="LabelMinSalePrice" xml:space="preserve">
+    <value>ادنى سعر</value>
+  </data>
+  <data name="LabelOfferPrice" xml:space="preserve">
+    <value>سعر العرض</value>
+  </data>
+  <data name="LabelOrderQuantity" xml:space="preserve">
+    <value>كمية الطلب</value>
+  </data>
+  <data name="LabelOutSidePrice" xml:space="preserve">
+    <value>سعر الوب سايت</value>
+  </data>
+  <data name="LabelProductCode" xml:space="preserve">
+    <value>كود الصنف</value>
+  </data>
+  <data name="LabelSalePrice" xml:space="preserve">
+    <value>سعر البيع</value>
+  </data>
+  <data name="LabelUnitName" xml:space="preserve">
+    <value>الوحدة</value>
+  </data>
+  <data name="LabelUploadImage" xml:space="preserve">
+    <value>تحميل الصورة</value>
+  </data>
+  <data name="LabelVAT" xml:space="preserve">
+    <value>الضريبة</value>
+  </data>
+  <data name="LabelWholeSalePrice" xml:space="preserve">
+    <value>سعر الجملة</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>العملية فشلت</value>
+  </data>
+</root>
