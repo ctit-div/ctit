@@ -37,8 +37,6 @@ public partial class BookingInfo : System.Web.UI.Page
             DataList1.DataSource = MyDateSet.Tables["Category_Item"];
 
             DataList1.DataBind();
-
-
             MyCon.Close();
         }
         catch (Exception ex)
