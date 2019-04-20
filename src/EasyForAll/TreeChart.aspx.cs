@@ -111,6 +111,7 @@ public partial class TreeChart : System.Web.UI.Page
         
         string[] acc = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         TxtSearch.Text = acc[1].ToString();
+        LblAccount.Text = acc[0].ToString();
 
     }
 

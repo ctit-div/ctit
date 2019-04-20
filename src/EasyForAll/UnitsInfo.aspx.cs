@@ -80,11 +80,11 @@ public partial class UnitsInfo : System.Web.UI.Page
             accountantCls.Cmd.CommandText = "USP_Unit_Save";
             //accountantCls.Cmd.Parameters.Add("@UnitId", SqlDbType.Int).Value = Unit.UnitId;
             accountantCls.Cmd.Parameters.Add("@CompanyId", SqlDbType.Int).Value =int.Parse(Session["CompanyId"].ToString());
-            accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = int.Parse(Session["BranchId"].ToString());
+            //accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = int.Parse(Session["BranchId"].ToString());
             accountantCls.Cmd.Parameters.Add("@UnitName", SqlDbType.NVarChar).Value = TxtUnitName.Text;
             accountantCls.Cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = TxtDescription.Text;
            
-                accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = CreatedBy;
+                accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Session["UserCode"].ToString();
            
          
             accountantCls.beginTrans();
@@ -137,10 +137,10 @@ public partial class UnitsInfo : System.Web.UI.Page
             accountantCls.Cmd.CommandText = "USP_Unit_Edit";
             accountantCls.Cmd.Parameters.Add("@UnitId", SqlDbType.Int).Value = Session["Id"].ToString();
             accountantCls.Cmd.Parameters.Add("@CompanyId", SqlDbType.Int).Value = Session["CompanyId"];
-            accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = Session["BranchId"];
+            //accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = Session["BranchId"];
             accountantCls.Cmd.Parameters.Add("@UnitName", SqlDbType.NVarChar).Value = TxtUnitName.Text;
             accountantCls.Cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = TxtDescription.Text;
-            accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = ModifiedBy;
+            accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Session["UserCode"].ToString();
             accountantCls.beginTrans();
             accountantCls.Cmd.ExecuteNonQuery();
             accountantCls.commitTrans();

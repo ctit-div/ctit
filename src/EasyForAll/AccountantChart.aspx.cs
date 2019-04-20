@@ -170,6 +170,7 @@ public partial class AccountantChart : System.Web.UI.Page
         LabelErrorMessage.Text = "";
         pnlTextBoxes.Visible = true;
         LblNodeValue.Text =acc[1].ToString();
+        LblAccount.Text = acc[0].ToString();
         TxtSearch.Text = LblNodeValue.Text;
         ParentChartID = Convert.ToInt64(acc[1].ToString());
         GetDetails();

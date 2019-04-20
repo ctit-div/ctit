@@ -47,9 +47,9 @@ public partial class PaymentVoucher : System.Web.UI.Page
                 LabelPlaceOfIssue.Text=String.Format(global::Resources.ResourceMain.PlaceOfIssue);
                 LabelReceivedFrom.Text = String.Format(global::Resources.ResourceMain.ReceivedFrom);
                 LabelPayedFrom.Text = String.Format(global::Resources.ResourceMain.PayFrom);
-                LabelBranchName.Text = String.Format(global::Resources.ResourceMain.BranchName);
-                LabelDepartmentName.Text = String.Format(global::Resources.ResourceMain.DepartmentName);
-                LabelDevisionName.Text = String.Format(global::Resources.ResourceMain.DevisionName);
+                //LabelBranchName.Text = String.Format(global::Resources.ResourceMain.BranchName);
+                //LabelDepartmentName.Text = String.Format(global::Resources.ResourceMain.DepartmentName);
+                //LabelDevisionName.Text = String.Format(global::Resources.ResourceMain.DevisionName);
                 LabelCurrency.Text = String.Format(global::Resources.ResourceMain.Currency);
                 LabelForiegnCurrencyAmount.Text = String.Format(global::Resources.ResourceMain.ForiegnCurrencyAmount);
                 LabelExchangeRate.Text = String.Format(global::Resources.ResourceMain.ExchangeRate);
@@ -80,9 +80,9 @@ public partial class PaymentVoucher : System.Web.UI.Page
                 LabelPlaceOfIssue.Text = String.Format(global::Resources.ResourceMain_Ar.PlaceOfIssue);
                 LabelReceivedFrom.Text = String.Format(global::Resources.ResourceMain_Ar.ReceivedFrom);
                 LabelPayedFrom.Text = String.Format(global::Resources.ResourceMain_Ar.PayFrom);
-                LabelBranchName.Text = String.Format(global::Resources.ResourceMain_Ar.BranchName);
-                LabelDepartmentName.Text = String.Format(global::Resources.ResourceMain_Ar.DepartmentName);
-                LabelDevisionName.Text = String.Format(global::Resources.ResourceMain_Ar.DevisionName);
+                //LabelBranchName.Text = String.Format(global::Resources.ResourceMain_Ar.BranchName);
+                //LabelDepartmentName.Text = String.Format(global::Resources.ResourceMain_Ar.DepartmentName);
+                //LabelDevisionName.Text = String.Format(global::Resources.ResourceMain_Ar.DevisionName);
                 LabelCurrency.Text = String.Format(global::Resources.ResourceMain_Ar.Currency);
                 LabelForiegnCurrencyAmount.Text = String.Format(global::Resources.ResourceMain_Ar.ForiegnCurrencyAmount);
                 LabelExchangeRate.Text = String.Format(global::Resources.ResourceMain_Ar.ExchangeRate);
@@ -99,9 +99,9 @@ public partial class PaymentVoucher : System.Web.UI.Page
             ViewState["EditId"] = "0";
             
             Session["AdminUserName"] = "1";
-            SqlDataSourceBranch.DataBind();
-            _ddBranchName.DataBind();
-            _ddBranchName.Items.Insert(0, new ListItem("Please Select", "0"));
+            //SqlDataSourceBranch.DataBind();
+            //_ddBranchName.DataBind();
+            //_ddBranchName.Items.Insert(0, new ListItem("Please Select", "0"));
             BindCurrency();
             BindPaidFrom();
             BindPaidTo();
@@ -213,9 +213,9 @@ public partial class PaymentVoucher : System.Web.UI.Page
                 accountantCls.Cmd.Parameters.Add("@TransactionType", SqlDbType.VarChar).Value = "P";//to
                 accountantCls.Cmd.Parameters.Add("@LedgerId", SqlDbType.Int).Value = _ddPayedTo.SelectedValue;
                 accountantCls.Cmd.Parameters.Add("@FinYearId", SqlDbType.Int).Value = Session["FinYearID"].ToString();
-                accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = _ddBranchName.SelectedValue;
-                accountantCls.Cmd.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = _ddDepartment.SelectedValue;
-                accountantCls.Cmd.Parameters.Add("@DivisionId", SqlDbType.Int).Value = _ddUnitName.SelectedValue;
+                //accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = _ddBranchName.SelectedValue;
+                //accountantCls.Cmd.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = _ddDepartment.SelectedValue;
+                //accountantCls.Cmd.Parameters.Add("@DivisionId", SqlDbType.Int).Value = _ddUnitName.SelectedValue;
                 accountantCls.Cmd.Parameters.Add("@Debit", SqlDbType.Decimal).Value = 0;
                 accountantCls.Cmd.Parameters.Add("@Credit", SqlDbType.Decimal).Value = _TxtAmount.Text;
                 accountantCls.Cmd.Parameters.Add("@ForeignAmount", SqlDbType.Decimal).Value = _TxtCurrency.Text;
@@ -392,21 +392,21 @@ public partial class PaymentVoucher : System.Web.UI.Page
         }
     }
 
-    protected void _ddBranchName_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        Session["BranchId"] = _ddBranchName.SelectedValue;
-        SqlDataSourceDepartment.DataBind();
-        _ddDepartment.DataBind();
-        _ddDepartment.Items.Insert(0, new ListItem("Please Select", "0"));
-    }
+    //protected void _ddBranchName_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    Session["BranchId"] = _ddBranchName.SelectedValue;
+    //    SqlDataSourceDepartment.DataBind();
+    //    _ddDepartment.DataBind();
+    //    _ddDepartment.Items.Insert(0, new ListItem("Please Select", "0"));
+    //}
 
-    protected void _ddDepartment_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        Session["DepartmentId"] = _ddBranchName.SelectedValue;
-        SqlDataSourceDivision.DataBind();
-        _ddUnitName.DataBind();
-        _ddUnitName.Items.Insert(0, new ListItem("Please Select", "0"));
-    }
+    //protected void _ddDepartment_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    Session["DepartmentId"] = _ddBranchName.SelectedValue;
+    //    SqlDataSourceDivision.DataBind();
+    //    _ddUnitName.DataBind();
+    //    _ddUnitName.Items.Insert(0, new ListItem("Please Select", "0"));
+    //}
 
     protected void _ddCurrency_SelectedIndexChanged(object sender, EventArgs e)
     {

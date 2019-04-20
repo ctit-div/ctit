@@ -309,7 +309,7 @@ public partial class ItemInfo : System.Web.UI.Page
             accountantCls.Cmd.CommandText = "USP_Item_Save";
             accountantCls.Cmd.Parameters.Add("@ItemId", SqlDbType.Int).Value = 0;
             accountantCls.Cmd.Parameters.Add("@CompanyId", SqlDbType.Int).Value =int.Parse(Session["CompanyId"].ToString());
-            accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = Session["BranchId"].ToString();
+           // accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = Session["BranchId"].ToString();
             accountantCls.Cmd.Parameters.Add("@ItemGroupId", SqlDbType.Int).Value = TreeView1.SelectedNode.Value;
             accountantCls.Cmd.Parameters.Add("@Level", SqlDbType.Int).Value = Level;
             accountantCls.Cmd.Parameters.Add("@ItemCode", SqlDbType.NVarChar).Value = TxtProductCode.Text;
@@ -413,7 +413,7 @@ public partial class ItemInfo : System.Web.UI.Page
             accountantCls.Cmd.CommandText = "USP_Item_Edit";
             accountantCls.Cmd.Parameters.Add("ItemId", SqlDbType.Int).Value = Session["ProductId"].ToString();
             accountantCls.Cmd.Parameters.Add("CompanyId", SqlDbType.Int).Value = Session["CompanyId"].ToString();
-            accountantCls.Cmd.Parameters.Add("BranchId", SqlDbType.Int).Value = Session["BranchId"].ToString();
+            //accountantCls.Cmd.Parameters.Add("BranchId", SqlDbType.Int).Value = Session["BranchId"].ToString();
          
             if (TreeView1.SelectedNode != null)
             {
@@ -473,7 +473,7 @@ public partial class ItemInfo : System.Web.UI.Page
 
 
 
-        MyCmd.CommandText = "Delete from   ProductsInfoTable  where ProductCode=N'" + TxtProductCode.Text + "'";
+        MyCmd.CommandText = "Delete from   tItems  where ItemCode=N'" + TxtProductCode.Text + "'";
         MyCmd.ExecuteNonQuery();
         LblMessage.Text = "Successfully deleted";
         MyCon.Close();

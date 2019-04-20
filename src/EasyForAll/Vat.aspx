@@ -81,26 +81,25 @@
 
                         <div class="panel panel-grey margin-bottom-40">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-briefcase"></i>All Units<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" DeleteCommand="DELETE FROM [tVAT] WHERE [VAT_Id] = @original_VAT_Id AND (([VAT_Value] = @original_VAT_Value) OR ([VAT_Value] IS NULL AND @original_VAT_Value IS NULL)) AND (([Remarks] = @original_Remarks) OR ([Remarks] IS NULL AND @original_Remarks IS NULL)) AND ((StatusId = @original_Status) OR ([StatusId] IS NULL AND @original_Status IS NULL))" InsertCommand="INSERT INTO [tVAT] ([VAT_Value], [Remarks], StatusId) VALUES (@VAT_Value, @Remarks, @Status)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tVAT]" UpdateCommand="UPDATE [tVAT] SET [VAT_Value] = @VAT_Value, [Remarks] = @Remarks, StatusId = @Status WHERE [VAT_Id] = @original_VAT_Id AND (([VAT_Value] = @original_VAT_Value) OR ([VAT_Value] IS NULL AND @original_VAT_Value IS NULL)) AND (([Remarks] = @original_Remarks) OR ([Remarks] IS NULL AND @original_Remarks IS NULL)) AND ((StatusId = @original_Status) OR (StatusId IS NULL AND @original_Status IS NULL))">
+                                <h3 class="panel-title"><i class="fa fa-briefcase"></i>All Units<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" DeleteCommand="DELETE FROM [tVAT] WHERE [VAT_Id] = @VAT_Id" InsertCommand="INSERT INTO [tVAT] ([VAT_Value], [Remarks], [CompanyId], [IsActive]) VALUES (@VAT_Value, @Remarks, @CompanyId, @IsActive)" SelectCommand="SELECT [VAT_Id], [VAT_Value], [Remarks], [CompanyId], [IsActive] FROM [tVAT] WHERE ([CompanyId] = @CompanyId)" UpdateCommand="UPDATE [tVAT] SET [VAT_Value] = @VAT_Value, [Remarks] = @Remarks, [CompanyId] = @CompanyId, [IsActive] = @IsActive WHERE [VAT_Id] = @VAT_Id">
                                     <DeleteParameters>
-                                        <asp:Parameter Name="original_VAT_Id" Type="Int32" />
-                                        <asp:Parameter Name="original_VAT_Value" Type="Decimal" />
-                                        <asp:Parameter Name="original_Remarks" Type="String" />
-                                        <asp:Parameter Name="original_Status" Type="String" />
+                                        <asp:Parameter Name="VAT_Id" Type="Int32" />
                                     </DeleteParameters>
                                     <InsertParameters>
                                         <asp:Parameter Name="VAT_Value" Type="Decimal" />
                                         <asp:Parameter Name="Remarks" Type="String" />
-                                        <asp:Parameter Name="StatusId" Type="String" />
+                                        <asp:Parameter Name="CompanyId" Type="Int32" />
+                                        <asp:Parameter Name="IsActive" Type="Boolean" />
                                     </InsertParameters>
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="CompanyId" SessionField="CompanyId" Type="Int32" />
+                                    </SelectParameters>
                                     <UpdateParameters>
                                         <asp:Parameter Name="VAT_Value" Type="Decimal" />
                                         <asp:Parameter Name="Remarks" Type="String" />
-                                        <asp:Parameter Name="StatusId" Type="String" />
-                                        <asp:Parameter Name="original_VAT_Id" Type="Int32" />
-                                        <asp:Parameter Name="original_VAT_Value" Type="Decimal" />
-                                        <asp:Parameter Name="original_Remarks" Type="String" />
-                                        <asp:Parameter Name="original_Status" Type="String" />
+                                        <asp:Parameter Name="CompanyId" Type="Int32" />
+                                        <asp:Parameter Name="IsActive" Type="Boolean" />
+                                        <asp:Parameter Name="VAT_Id" Type="Int32" />
                                     </UpdateParameters>
                                     </asp:SqlDataSource>
                                 </h3>
@@ -114,32 +113,12 @@
                                     <AlternatingRowStyle CssClass="Lbl"></AlternatingRowStyle>
                                  
                                     <Columns>
-                                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" CausesValidation="false" />
-                                        <asp:TemplateField HeaderText="VAT_Id" InsertVisible="False" SortExpression="VAT_Id">
-                                            <EditItemTemplate>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("VAT_Id") %>'></asp:Label>
-                                            </EditItemTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("VAT_Id") %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="VAT_Value" SortExpression="VAT_Value">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("VAT_Value") %>'></asp:TextBox>
-                                            </EditItemTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("VAT_Value") %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Remarks" SortExpression="Remarks">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Remarks") %>'></asp:TextBox>
-                                            </EditItemTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("Remarks") %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="StatusId" HeaderText="Status" SortExpression="StatusId" />
+                                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                                        <asp:BoundField DataField="VAT_Id" HeaderText="VAT_Id" InsertVisible="False" ReadOnly="True" SortExpression="VAT_Id" />
+                                        <asp:BoundField DataField="VAT_Value" HeaderText="VAT_Value" SortExpression="VAT_Value" />
+                                        <asp:BoundField DataField="Remarks" HeaderText="Remarks" SortExpression="Remarks" />
+                                        <asp:BoundField DataField="CompanyId" HeaderText="CompanyId" SortExpression="CompanyId" />
+                                        <asp:CheckBoxField DataField="IsActive" HeaderText="IsActive" SortExpression="IsActive" />
                                     </Columns>
                                     <PagerStyle CssClass="pgr"></PagerStyle>
                                     <RowStyle CssClass="Lbl" />

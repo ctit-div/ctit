@@ -86,7 +86,7 @@
     <PagerStyle CssClass="pgr"></PagerStyle>
     <RowStyle CssClass="Lbl" HorizontalAlign="left" />
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT distinct QuotationId, CompanyId, BranchId, InvoiceNo, InvoiceDate, InvoiceType, PricingType, CustomerId, DiscountAmount, DiscountPercent, InvoiceTotal, Notes, IsActive, StatusText_Ar, QuotationStatusId FROM View_Quotation  WHERE (QuotationStatusId= 8)" UpdateCommand="UPDATE tQuotations SET IsActive = 1, Notes = @Note WHERE (InvoiceNo = @InvoiceNo)">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT distinct QuotationId, CompanyId, InvoiceNo, InvoiceDate, InvoiceType, PricingType, UserId, DiscountAmount, DiscountPercent, InvoiceTotal, Notes, IsActive, StatusText_Ar, QuotationStatusId FROM View_Quotation  WHERE (QuotationStatusId= 8)" UpdateCommand="UPDATE tQuotations SET IsActive = 1, Notes = @Note WHERE (InvoiceNo = @InvoiceNo)">
     <UpdateParameters>
         <asp:SessionParameter Name="Note" SessionField="Note" />
         <asp:SessionParameter Name="InvoiceNo" SessionField="InvoiceNo" />

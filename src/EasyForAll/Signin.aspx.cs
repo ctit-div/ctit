@@ -48,7 +48,7 @@ public partial class Signin : System.Web.UI.Page
             MyCmd.Connection = MyCon;
 
 
-            MyCmd.CommandText = "select * from View_Menus where Email='" + _EmailText.Text + "' and Password = '" + Midwest.Security.RijndaelEncryptionAlg.RijndaelEncryption.Encrypt(_PasswordText.Text) + "' and IsActive='1'";
+            MyCmd.CommandText = "select * from View_Menus where Email='" + _EmailText.Text + "' and Password = '" + Midwest.Security.RijndaelEncryptionAlg.RijndaelEncryption.Encrypt(_PasswordText.Text) + "' and IsActive='1' and FinYearIDStatus='1'";
             SqlDataReader Reader = MyCmd.ExecuteReader();
 
             if (Reader.Read())
@@ -61,7 +61,7 @@ public partial class Signin : System.Web.UI.Page
                 Session["UserCode"] = Reader["UserId"].ToString().Trim();
                 Session["EditId"] = Reader[0].ToString().Trim();
                 Session["CompanyId"] = Reader["CompanyId"].ToString().Trim();
-                //Session["BranchId"] = Reader["BranchId"].ToString().Trim();
+                Session["FinYearID"] = Reader["FinYearID"].ToString().Trim();
                 //Session["DepartmentId"] = Reader["DepartmentId"].ToString().Trim();
                 //Session["DivisionId"] = Reader["DivisionId"].ToString().Trim();
                 Session["UserRoleId1"] = Reader["UserRoleId"].ToString().Trim();

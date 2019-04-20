@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
 
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT * FROM tCompany"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT * FROM tCompanys"></asp:SqlDataSource>
 
                         <hr />
                     </div>

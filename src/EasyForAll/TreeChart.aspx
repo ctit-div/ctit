@@ -136,7 +136,7 @@
                     <div class="col-md-4">
 
                         <asp:TextBox ID="TxtSearch" CssClass="form-control" placeholder="Search by Account Text" runat="server"></asp:TextBox>
-
+                        <asp:Label ID="LblAccount" runat="server" BackColor="Black" ForeColor="White"></asp:Label>
 
 
                     </div>

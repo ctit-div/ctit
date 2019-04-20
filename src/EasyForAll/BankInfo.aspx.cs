@@ -50,7 +50,7 @@ public partial class BankInfo : System.Web.UI.Page
 
     protected void BtnClear_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("BankInfo.aspx");
     }
 
     protected void BtnSave_Click(object sender, EventArgs e)

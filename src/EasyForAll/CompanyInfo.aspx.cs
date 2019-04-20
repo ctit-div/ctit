@@ -343,7 +343,7 @@ public partial class CompanyInfo : System.Web.UI.Page
             accountantCls.beginTrans();
 
 
-            accountantCls.Cmd.CommandText = "delete from  tCompany  where  CompanyID='" + Session["Id"].ToString() + "'";
+            accountantCls.Cmd.CommandText = "delete from  tCompanys  where  CompanyID='" + Session["Id"].ToString() + "'";
             accountantCls.Cmd.ExecuteNonQuery();
             LabelErrorMessage.Text = "Successfully deleted";
             accountantCls.Conn.Close();

@@ -55,7 +55,7 @@
     <PagerStyle CssClass="pgr"></PagerStyle>
     <RowStyle CssClass="Lbl" />
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT distinct QuotationId, CompanyId, BranchId, InvoiceNo, InvoiceDate, InvoiceType, PricingType, CustomerId, DiscountAmount, DiscountPercent, InvoiceTotal, Notes, IsActive, StatusText_Ar, QuotationStatusId FROM View_Quotation  WHERE (CustomerId = @CustomerId)  AND ((QuotationStatusId = 8) OR (QuotationStatusId = 6))" UpdateCommand="UPDATE tQuotations SET IsActive = 1, Notes = @Note WHERE (InvoiceNo = @InvoiceNo)">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT distinct QuotationId, CompanyId, InvoiceNo, InvoiceDate, InvoiceType, PricingType, UserId, DiscountAmount, DiscountPercent, InvoiceTotal, Notes, IsActive, StatusText_Ar, QuotationStatusId FROM View_Quotation  WHERE (UserId = @CustomerId)  AND ((QuotationStatusId = 8) OR (QuotationStatusId = 6))" UpdateCommand="UPDATE tQuotations SET IsActive = 1, Notes = @Note WHERE (InvoiceNo = @InvoiceNo)">
     <SelectParameters>
         <asp:SessionParameter Name="CustomerId" SessionField="UserCode" Type="Int32" />
     </SelectParameters>

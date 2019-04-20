@@ -109,7 +109,7 @@
                                         </asp:TemplateField>
 
                                         <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-
+                                        <asp:BoundField DataField="UnitName" HeaderText="UnitName" SortExpression="UnitName" />
                                     </Columns>
                                     <PagerStyle CssClass="pgr"></PagerStyle>
                                     <RowStyle CssClass="Lbl" />

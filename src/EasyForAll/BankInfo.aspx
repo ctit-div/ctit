@@ -324,7 +324,7 @@
         </div>
         <div class="modal-footer">
          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           <asp:Button ID="ButtonSavechanges" runat="server" CausesValidation="false" CssClass="fs fa-search" Text="Save changes" OnClick="ButtonSavechanges_Click" />
+           <asp:Button ID="ButtonSavechanges" runat="server" Width="100px" CausesValidation="false" CssClass="fs fa-search" Text="Save changes" OnClick="ButtonSavechanges_Click" />
        
         </div>
       </div>

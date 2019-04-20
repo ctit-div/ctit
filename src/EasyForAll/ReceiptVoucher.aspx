@@ -319,7 +319,7 @@
                             </div>
                                </div>
                     </div>
-                    <div class="col-md-3">
+                    <%--<div class="col-md-3">
                         <div>
                             <br />
                             <asp:Label ID="LabelBranchName" runat="server" CssClass="Lbl" Text="Branch Name"></asp:Label>
@@ -356,7 +356,7 @@
 
                         </asp:DropDownList>
 
-                    </div>
+                    </div>--%>
 
                 </div>
                 <div class="row">
@@ -456,13 +456,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <asp:SqlDataSource ID="SqlDataSourceDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT DepartmentId, BranchId, DepartmentName, DepartmentDescription, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, IsActive, BRNBranchName, CMPCompanyName, CompanyId FROM View_Department WHERE (BranchId = @DepartmentId)  and (IsActive = 1)">
+                       <%-- <asp:SqlDataSource ID="SqlDataSourceDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT DepartmentId, BranchId, DepartmentName, DepartmentDescription, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, IsActive, BRNBranchName, CMPCompanyName, CompanyId FROM View_Department WHERE (BranchId = @DepartmentId)  and (IsActive = 1)">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="_ddBranchName" Name="DepartmentId" PropertyName="SelectedValue" />
                             </SelectParameters>
-                        </asp:SqlDataSource>
+                        </asp:SqlDataSource>--%>
                         <asp:SqlDataSource ID="SqlDataSourceCompany" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT CompanyID, CMPCompanyName, CMPShortName, IsActive FROM tCompanys WHERE (IsActive = 1)"></asp:SqlDataSource>
-                        <asp:SqlDataSource ID="SqlDataSourceBranch" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT BranchId, CompanyId, BRNBranchName, BRNBranchAddress FROM tBranches WHERE (CompanyId = @CompanyId) and (IsActive = 1)">
+                       <%-- <asp:SqlDataSource ID="SqlDataSourceBranch" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT BranchId, CompanyId, BRNBranchName, BRNBranchAddress FROM tBranches WHERE (CompanyId = @CompanyId) and (IsActive = 1)">
                             <SelectParameters>
                                 <asp:SessionParameter Name="CompanyId" SessionField="CompanyId" />
                             </SelectParameters>
@@ -471,7 +471,7 @@
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="_ddDepartment" Name="DepartmentId" PropertyName="SelectedValue" />
                             </SelectParameters>
-                        </asp:SqlDataSource>
+                        </asp:SqlDataSource>--%>
                         <asp:SqlDataSource ID="SqlDataSourceDetails" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT * FROM [tVoucherDetails]"></asp:SqlDataSource>
                         <asp:SqlDataSource ID="SqlDataSourceCurrency" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT CurrencyId, CurrencyName + '(' + CurrencySymbol + ')'  as CurrencyName, Status, IsLocal FROM tCurrency WHERE (Status = 1)"></asp:SqlDataSource>
                     </div>

@@ -78,11 +78,11 @@ public partial class Vat : System.Web.UI.Page
             accountantCls.Cmd.CommandText = "USP_Vat_Save";
             //accountantCls.Cmd.Parameters.Add("@UnitId", SqlDbType.Int).Value = Unit.UnitId;
             accountantCls.Cmd.Parameters.Add("@CompanyId", SqlDbType.Int).Value = int.Parse(Session["CompanyId"].ToString());
-            accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = int.Parse(Session["BranchId"].ToString());
+            //accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = int.Parse(Session["BranchId"].ToString());
             accountantCls.Cmd.Parameters.Add("@VAT_Value", SqlDbType.NVarChar).Value = TxtVAT_Value.Text;
             accountantCls.Cmd.Parameters.Add("@Remarks", SqlDbType.NVarChar).Value = TxtRemarks.Text;
 
-            accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = CreatedBy;
+            accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Session["UserCode"].ToString();
 
 
             accountantCls.beginTrans();
@@ -104,99 +104,23 @@ public partial class Vat : System.Web.UI.Page
         Session.Remove("Id");
         Response.Redirect("vat.aspx");
     }
-    //protected void GvDriver_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //    Label lb = (Label)GvDriver.SelectedRow.FindControl("Label1");
-    //    accountantCls.Cmd.Connection.ConnectionString = accountantCls.GetConnStr();
-
-    //    accountantCls.beginTrans();
-    //    accountantCls.Cmd.CommandText = "select * from tvat where VAT_Id='" + lb.Text.Trim() + "'";
-    //    accountantCls.Reader = accountantCls.Cmd.ExecuteReader();
-    //    if (accountantCls.Reader.Read())
-    //    {
-    //        TxtVAT_Value.Text = accountantCls.Reader["VAT_Value"].ToString();
-    //        TxtRemarks.Text = accountantCls.Reader["Remarks"].ToString();
-    //        Session["Id"] = lb.Text.Trim();
-
-    //        BtnSave.Visible = false;
-    //        BtnUpdate.Visible = true;
-    //    }
-
-    //    accountantCls.Reader.Close();
-    //    accountantCls.commitTrans();
-    //}
-    //protected void BtnUpdate_Click(object sender, EventArgs e)
-    //{
-
-    //    try
-    //    {
-    //        accountantCls.Cmd.Connection.ConnectionString = accountantCls.GetConnStr();
-    //        accountantCls.Cmd.CommandType = CommandType.StoredProcedure;
-    //        accountantCls.Cmd.CommandText = "USP_Unit_Edit";
-    //        accountantCls.Cmd.Parameters.Add("@UnitId", SqlDbType.Int).Value = Session["Id"].ToString();
-    //        accountantCls.Cmd.Parameters.Add("@CompanyId", SqlDbType.Int).Value = Session["CompanyId"];
-    //        accountantCls.Cmd.Parameters.Add("@BranchId", SqlDbType.Int).Value = Session["BranchId"];
-    //        accountantCls.Cmd.Parameters.Add("@VAT_Value", SqlDbType.NVarChar).Value = TxtVAT_Value.Text;
-    //        accountantCls.Cmd.Parameters.Add("@Remarks", SqlDbType.NVarChar).Value = TxtRemarks.Text;
-    //        accountantCls.Cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = ModifiedBy;
-    //        accountantCls.beginTrans();
-    //        accountantCls.Cmd.ExecuteNonQuery();
-    //        accountantCls.commitTrans();
-    //        accountantCls.Cmd.Parameters.Clear();
-    //        BindUnit();
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        accountantCls.rollBackTrans();
-    //        LblMessage.Text = ex.Message;
-
-    //    }
-
-
-    //}
-
-    //protected void GvDriver_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    //{
-    //    Session["Id"] = e.Keys[0].ToString();
-    //    try
-    //    {
-
-    //        accountantCls.Cmd.Connection.ConnectionString = accountantCls.GetConnStr();
-
-    //        accountantCls.beginTrans();
-
-
-    //        accountantCls.Cmd.CommandText = "delete from  tUnits  where  UnitId='" + Session["Id"].ToString() + "'";
-    //        accountantCls.Cmd.ExecuteNonQuery();
-    //        LblMessage.Text = "Successfully deleted";
-    //        accountantCls.Conn.Close();
-    //        accountantCls.commitTrans();
-    //        accountantCls.Cmd.Parameters.Clear();
-    //        BindUnit();
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        accountantCls.rollBackTrans();
-    //        LblMessage.Text = ex.Message.ToString();
-    //    }
-
-
-    //}
+    
 
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Label lb = (Label)GridView1.SelectedRow.FindControl("Label1");
+        //Label lb = (Label)GridView1.SelectedRow.FindControl("Label1");
+        string lb = GridView1.SelectedRow.Cells[1].Text;
         accountantCls.Cmd.Connection.ConnectionString = accountantCls.GetConnStr();
 
         accountantCls.beginTrans();
-        accountantCls.Cmd.CommandText = "select * from tvat where VAT_Id='" + lb.Text.Trim() + "'";
+        accountantCls.Cmd.CommandText = "select * from tvat where VAT_Id='" + lb + "'";
         accountantCls.Reader = accountantCls.Cmd.ExecuteReader();
         if (accountantCls.Reader.Read())
         {
             TxtVAT_Value.Text = accountantCls.Reader["VAT_Value"].ToString();
             TxtRemarks.Text = accountantCls.Reader["Remarks"].ToString();
-            Session["Id"] = lb.Text.Trim();
+            Session["Id"] = lb;
 
             BtnSave.Visible = false;
             //BtnUpdate.Visible = true;

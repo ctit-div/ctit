@@ -89,9 +89,9 @@
     <PagerStyle CssClass="pgr"></PagerStyle>
     <RowStyle CssClass="Lbl" />
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT distinct QuotationId, CompanyId, BranchId, InvoiceNo, InvoiceDate, InvoiceType, PricingType, CustomerId, DiscountAmount, DiscountPercent, InvoiceTotal, Notes, IsActive,StatusText_Ar FROM View_Quotation WHERE (CustomerId = @CustomerId) AND (QuotationStatusId not in(8))" UpdateCommand="UPDATE tQuotations SET IsActive = 1, Notes = @Note WHERE (InvoiceNo = @InvoiceNo)">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FinanceConnStr %>" SelectCommand="SELECT distinct QuotationId, CompanyId, InvoiceNo, InvoiceDate, InvoiceType, PricingType, UserId, DiscountAmount, DiscountPercent, InvoiceTotal, Notes, IsActive,StatusText_Ar FROM View_Quotation WHERE (UserId = @UserId) AND (QuotationStatusId not in(8))" UpdateCommand="UPDATE tQuotations SET IsActive = 1, Notes = @Note WHERE (InvoiceNo = @InvoiceNo)">
     <SelectParameters>
-        <asp:SessionParameter Name="CustomerId" SessionField="UserCode" Type="Int32" />
+        <asp:QueryStringParameter Name="UserId" QueryStringField="UserCode" />
     </SelectParameters>
     <UpdateParameters>
         <asp:SessionParameter Name="Note" SessionField="Note" />
